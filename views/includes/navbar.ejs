@@ -1,0 +1,276 @@
+<style>
+ .navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:var(--bg);
+    color:var(--text);
+    box-shadow:var(--nav-shadow);
+    transition:.3s ease;
+  }
+  
+
+  .navbar-brand{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--brand-text)!important;
+  }
+
+  .navbar .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .navbar-right{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+  }
+
+  .nav-menu{
+    display:flex;
+    align-items:center;
+    gap:1.5625rem;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .nav-menu li{
+    list-style:none;
+  }
+
+  .nav-menu a{
+    text-decoration:none;
+  }
+
+  .nav-link{
+    position: relative;
+    display: inline-block;
+    padding: .6rem 1rem;
+    color: var(--text) !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color .3s ease;
+
+  }
+
+  .nav-link:hover{
+    color:var(--primary) !important;
+    
+  }
+  .nav-link::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 0.125rem;
+    background: var(--primary);
+    transform: translateX(-50%);
+    transition: width .3s ease;
+  }
+  .nav-link.active{
+    color: var(--primary);
+  }
+  .nav-link.active::after{
+    width: 80%;
+  }
+
+  .get-started-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width: 8rem;
+    min-height: 3rem;
+    padding: .75rem 1.5rem;
+    background:var(--primary-dark);
+    color:var(--white);;
+    text-decoration:none;
+    border-radius:.75rem;
+    font-weight:500;
+    transition:
+      transform .3s ease,
+      background .3s ease,
+      box-shadow .3s ease,
+      color .3s ease;
+  }
+
+  .get-started-btn:hover{
+    background:var(--primary-dark);  
+    color:var(--white);
+    transform:scale(1.02);
+    box-shadow:var(--primary-shadow);
+  }
+
+  .get-started-btn:active{
+    transform:scale(.96);
+  }
+ 
+
+  .theme-btn{
+    width:2.8125rem;
+    height:2.8125rem;
+    border:none;
+    border-radius:50%;
+    background:var(--card);
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+  }
+
+  .theme-btn:hover{
+    background:var(--primary);
+    color:var(--white);;
+  }
+
+  .menu-btn{
+    display:none;
+    font-size:1.875rem;
+    color:var(--text);
+    cursor:pointer;
+    transition:.3s;
+  }
+
+  .menu-btn:hover{
+    color:var(--primary);
+  }
+  
+/* Desktop */
+  @media(min-width:64rem){
+    .menu-btn{
+      display:none;
+    }
+}
+/* tablet */
+  @media(max-width:63.9375rem){
+
+    .menu-btn{
+      display:block;
+    }
+    .nav-menu{
+      display:none;
+    }
+    .nav-menu.active{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      position:fixed;
+      top:4.6875rem;
+      right:0.9375rem;
+      width:max-content;
+      min-width:10.625rem;
+      background:var(--bg);
+      padding: 0.5rem 0;
+      border-radius:0.75rem;
+      box-shadow:var(--menu-shadow);
+      gap:0;
+      z-index:999;
+    }
+    .nav-menu.active li{
+      width:100%;
+    }
+    .nav-menu.active li a{
+      display:block;
+      width:100%;
+      padding:0.75rem 1.25rem;
+      color:var(--text);
+      transition:.3s;
+    }
+    .nav-menu.active li a:hover{
+      background:var(--card);
+      color:var(--primary);
+    }
+  }
+
+  @media(max-width:47.9375rem){
+
+    .navbar-brand{
+      font-size:1.7rem;
+    }
+    .btn-primary{
+      display:none;
+    }
+    .theme-btn{
+      width:2.6875rem;
+      height:2.6875rem;
+      margin-left:0;
+    }
+    .navbar-right{
+      gap:0.625rem;
+    }
+    .menu-btn{
+      font-size:2rem;
+    }
+    .nav-menu.active{
+      top:4.5rem;
+      right:0.625rem;
+      min-width:9.6875rem;
+    }
+  }
+/* Mobile */
+  @media(max-width:25rem){
+
+    .navbar-brand{
+      font-size:1.5rem;
+    }
+    .theme-btn{
+      width:2.375rem;
+      height:2.375rem;
+    }
+    .menu-btn{
+      font-size:1.75rem;
+    }
+    .btn-primary{
+      display:none;
+    }
+  }
+</style>
+<header >
+  <nav class="navbar mb-3 ">
+    <div class="container">
+      <a class="navbar-brand " href="/brands">
+        <span class="c-logo">C</span> Brand
+      </a>
+      <ul class="nav-menu align-items-lg-center" id="navMenu">
+        <li class="nav-item ">
+          <a class="nav-link active fw-semibold" href="#home">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link fw-semibold" href="#services">Services</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link fw-semibold" href="#features">Features</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link fw-semibold" href="#about">About</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link fw-semibold" href="#contact">Contact</a>
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <a href="#services" class="get-started-btn">
+          Get Started
+        </a>
+        <button
+          id="themeToggle"
+          class="theme-btn"
+          type="button"
+          aria-label="Toggle dark mode"
+          aria-pressed="false">
+            <i class="bi bi-moon-fill" aria-hidden="true"></i>
+        </button>
+        <div class="menu-btn" id="menuBtn">
+          <i class="bi bi-list"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

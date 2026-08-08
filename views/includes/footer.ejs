@@ -1,0 +1,138 @@
+<style>
+.f-info{
+    text-align: left;
+    background: var(--card);
+    color: var(--brand-text);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+    min-height: 11.25rem;
+    flex-wrap: wrap;
+}
+
+.f-info-brand,
+.f-info-socials,
+.f-info-support,
+.f-info-links{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.f-info-brand{
+    text-align: center;
+}
+
+.f-info-socials{
+
+    text-align: left;
+    
+}
+.f-info-support{
+    text-align: left;
+}
+.f-info-links{
+    text-align: left;
+    
+}
+
+.f-info-brand p{
+    margin-top: .5rem;
+    align-items: first baseline;
+}
+.f-info-links p,
+.f-info-support p,
+.f-info-socials p{
+    margin-bottom: .1rem;
+    font-weight: 600;
+}
+.f-info-links a,
+.f-info-support a,
+.f-info-socials a{
+    display: block;
+    color: var(--text) !important;
+    text-decoration: none;
+    margin: .2rem 0;
+    transition: all .3s ease;
+}
+.f-info-links a:hover,
+.f-info-support a:hover,
+.f-info-socials a:hover{
+    color: var(--icon-hover) !important;
+    text-decoration: underline !important;
+}
+.f-info-socials i{
+    font-size: 1.2rem;
+    color: var(--icon-default);
+    margin: 0 .3rem; 
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.f-info-socials i:hover{
+    color: var(--icon-hover);
+    transform: scale(1.1);
+}
+@media (max-width: 48rem) {
+
+    .f-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    .f-info-brand {
+        align-items: flex-start;
+    }
+    .f-info-socials,
+    .f-info-support,
+    .f-info-links {
+        width: 100%;
+    }
+
+    .footer-options {
+        display: none;
+    }
+
+    .footer-title {
+        cursor: pointer;
+        margin: 0;
+    }
+}
+
+
+</style>
+<footer>
+    <div class="f-info" id="about" >
+        <div class="f-info-brand">
+            <a class="navbar-brand" href="/brands">
+                <span class="c-logo">C</span> Brand
+            </a>
+            <p>2026 The Corporate Brand.</p>
+        </div>
+
+         <div class="f-info-support" id="contact">
+            <p>Support</p>
+            <a href="#">FAQ </a>
+            <a href="#">Report Abuse </a>
+            <a href="#">System Status </a>
+        </div>
+
+        <div class="f-info-socials" id="contact">
+            <p>Contact Us</p>
+            <a>facebook <i class="bi bi-facebook"></i></a>
+            <a>instagram <i class="bi bi-instagram"></i></a>
+            <a>linkedin <i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <div class="f-info-links">
+            <p>Policy</p>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>  
+        </div>
+    </div>
+</footer>
