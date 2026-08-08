@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const ejsMate = require("ejs-mate");
 const path = require("path");
-
+const PORT = process.env.PORT || 8080;
 
 
 app.engine("ejs", ejsMate);
@@ -16,6 +16,6 @@ app.get("/brands", (req, res) => {
     res.render("brands/index");
 });
 
-app.listen(8080, () => {
-    console.log("Server is Listening to port 8080");
+app.listen(PORT, () => {
+    console.log(`Server is Listening to port ${PORT}`);
 });
