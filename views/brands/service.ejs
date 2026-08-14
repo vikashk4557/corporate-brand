@@ -1,0 +1,21 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="service-page">
+    <section>
+        <div class="service-container">
+            <aside class="service-sidebar">
+                <a href="/brands#services" class="go-back">go back</a>
+            </aside>
+
+            <section class="service-content">
+                <h1 class="service-title"><i class="bi <%= service.icon %> icon <%= service.iconClass %>"></i>
+                    <%= service.title %></h1>
+                <div class="service-description">
+                    <p><h6><span class="c-logo">Description</span></h6> : <%= service.description %></p>
+                    <p><h6><span class="c-logo">Details</span></h6> : <%= service.details %></p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+</main>

@@ -3,17 +3,13 @@
 
 <main>
 
-    <section class="hero " id="home">
-        <div class="hero__content ">
-            <h1 class="hero__title">Modern Digital Solutions</h1>
-            <p>Build scalable web applications with performance and accessibility in mind.</p>
+    <section class="hero" id="home">
+        <div class="hero__content">
+            <h1 class="hero__title"><%= data.hero.title %></h1>
+            <p> <%= data.hero.description %></p>
             <div class="hero__buttons">
-                <a href="#services" class="hero-btn btn--primary ">
-                    Get Started
-                </a>
-                <a href="#features" class="hero-btn btn--secondary ">
-                    Learn More
-                </a>
+                <a href="#services" class="hero-btn btn--primary"><%= data.hero.primaryButton %></a>
+                <a href="#features" class="hero-btn btn--secondary"><%= data.hero.secondaryButton %></a>
             </div>
         </div>
         <div class="hero__image">
@@ -25,57 +21,45 @@
                 decoding="async"
                 alt="Modern digital solutions">
         </div>
+
     </section>
-    <div></div>
-    <section class="services"id="services" >
-        <h2 class="section-title">Our Services</h2>
-        <div class="services__grid">
+    
+    <section class="services" id="services">
+        <h2 class="section-title"><%= data.services.title %></h2>
+        <div class="services__grid"><% data.services.items.forEach(service => { %>
             <div class="service">
                 <div>
-                    <h3 class="service-heading"><i class="bi bi-megaphone icon marketing"></i>  Digital Marketing</h3>
-                    <p>We help businesses build a strong online presence through modern digital marketing strategies.</p>
+                    <h3 class="service-heading">
+                        <i class="bi <%= service.icon %> icon <%= service.iconClass %>"></i>
+                        <%= service.title %>
+                    </h3>
+                    <p>
+                        <%= service.description %>
+                    </p>
                 </div>
                 <div>
-                    <button class="btn btn-dark btn--secondary hero-btn">Learn More</button>
+                    <a href="/services/<%= service.slug %>"
+                    class="btn btn-dark btn--secondary hero-btn">
+                        Learn More
+                    </a>
                 </div>
             </div>
-            <div class="service">
-                <div>
-                    <h3 class="service-heading"><i class="bi bi-bar-chart-line icon chart"></i>  SEO</h3>
-                    <p>Boost your search engine rankings with modern SEO techniques.</p>
-                </div>
-                <div>
-                    <button class="btn btn-dark btn--secondary hero-btn">Learn More</button>
-                </div>
-            </div>
-            <div class="service">
-                <div>
-                    <h3 class="service-heading"><i class="bi bi-camera-reels icon content"></i>  Content Creation</h3>
-                    <p>Create compelling and engaging content that captures attention, 
-                    builds trust, and inspires your audience to take action.</p>
-                </div>
-                <div>
-                    <button class="btn btn-dark btn--secondary hero-btn">Learn More</button>
-                </div>
-            </div>
+        <% }) %>
         </div>
     </section>
 
     <section class="features" id="features">
-        <h2 class="section-title">Our Features</h2>
+        <h2 class="section-title"><%= data.features.title %></h2>
         <div class="features__grid">
-            <div class="feature">
-                <h3 class="feature-heading"><i class="bi bi-pc-display-horizontal icon responsive"></i> Responsive</h3>
-                <p>Looks perfect on every device.</p>
-            </div>
-            <div class="feature">
-                <h3 class="feature-heading"><i class="bi bi-rocket-takeoff icon rocket"></i> Fast & Reliable</h3>
-                <p>Optimized for maximum performance.</p>
-            </div>
-            <div class="feature">
-                <h3 class="feature-heading"><i class="bi bi-shield-check icon secure"></i> Secure</h3>
-                <p>Enterprise-grade security standards.</p>
-            </div>
+            <% data.features.items.forEach(feature => { %>
+                <a href="/feature/<%= feature.slug %>" class="feature" >
+                    <h3 class="features-heading">
+                        <i class="bi <%= feature.icon %> icon <%= feature.iconClass %>"></i>
+                        <%= feature.title %>
+                    </h3>
+                    <p> <%= feature.description %></p>
+                </a>
+            <% }) %>
         </div>
     </section>
 </main>

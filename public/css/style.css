@@ -3,8 +3,11 @@
     --bg: #ffffff;
     --card: #f3f4f6;
     --brand:rgb(230, 10, 80);
-    --primary: #1e40af;;
+    --heo:rgb(49, 103, 242);
+    --primary: #1e40af;
+    --about-hero:rgba(49, 103, 242, .18);
     --primary-dark: #1d4ed8;
+    --card-border:1px solid rgba(148, 163, 184, .15);
     --secondary: #475569;
     --white: #ffffff;
     --brand-text: #1e3a8a;
@@ -174,6 +177,7 @@ img{
     text-align: center;
 }
 
+
 .services__grid,.features__grid{
     display:grid;
     grid-template-columns:
@@ -187,8 +191,25 @@ img{
     text-align: left;
     
 }
+.feature{
+    background:var(--card);
+    color:var(--text);
+    padding:2rem;
+    border-radius:1rem;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
 
-.service,.feature{
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+
+    cursor:pointer;
+
+}
+
+.service{
     background:var(--card);
     color:var(--text);
     padding:2rem;
@@ -270,4 +291,275 @@ img{
 }
 .marketing{
     color:var(--marketing-color); 
+}
+/* services.css & feature.css */
+.feature-page,
+.service-page {
+    padding: 4rem 5%;
+    color: var(--text);
+}
+.feature-page,
+.service-page {
+    padding: 4rem 5%;
+    color: var(--text);
+}
+.feature-container,
+.service-container {
+    width: min(71.875rem, 100%);
+    width: min(56.25rem,100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 9.375rem 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.go-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem 1rem;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: .5rem;
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 600;
+    box-shadow: var(--primary-shadow);
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+.go-back:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-0.1875rem);
+    box-shadow: var(--menu-shadow);
+}
+.feature-content,
+.service-content {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+.feature-title,
+.service-title {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    background:var(--primary);
+    color:var(--white);
+    text-align: center;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.3;
+}
+.feature-description,
+.service-description {
+    padding: 2rem 2.25rem;
+
+    background: var(--card);
+    color: var(--text);
+
+    line-height: 1.8;
+}
+.feature-description p,
+.service-description p {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--secondary);
+
+}
+.feature-description p:last-child,
+.service-description p:last-child {
+    margin-bottom: 0;
+}
+.feature-description p:first-child, 
+.service-description p:first-child {
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+@media (max-width: 48rem) {
+    .feature-page,
+    .service-page {
+        padding: 2rem 5%;
+    }
+    .feature-container,
+    .service-container {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .go-back {
+        width: fit-content;
+    }
+    .feature-content,
+    .service-content {
+        border-radius: .75rem;
+    }
+    .feature-title,
+    .service-title {
+        padding: 1rem 1.25rem;
+        text-align: center;
+    }
+    .feature-description,
+    .service-description {
+        padding: 1.5rem;
+    }
+
+}
+/* about */
+.about-hero {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse 85% 100% ,
+            var(--about-hero),
+            transparent 60%
+        ),
+        var(--bg);
+}
+.about-content {
+    padding: 6rem 5% 5rem;
+    max-width: 56.25rem;
+    margin: 0 auto;
+}
+.about-label {
+    display: inline-block;
+    color: var(--heo);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .15rem;
+    margin-bottom: 1rem;
+}
+.about-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.about-content h2 {
+    color: var(--brand);
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.about-content > p {
+    max-width: 46.875rem;
+    margin: auto;
+    color: var(--secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-mission {
+    width: min(68.75rem, 90%);
+    margin: 4rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+.vision,
+.mission{    
+    padding: 2.5rem;
+    background: var(--card);
+    align-items: center;
+    border-radius: 1rem;
+    border: var(--card-border);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.vision h2,
+.mission h2 {
+    color: var(--brand);
+    margin-bottom: 1rem;
+}
+.vision p,
+.mission p{
+    color: var(--secondary);
+    line-height: 1.8;
+}
+
+.values {
+    margin-bottom: 3.125rem;
+    padding: 5rem 5%;
+    background: var(--card);
+}
+.values > h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+}
+.values-grid {
+    max-width: 75rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 1.5rem;
+}
+.value-card {
+    padding: 2rem;
+    min-height: 15.625rem;
+    background: var(--bg);
+    border-radius: 1rem;
+    border:var(--card-border); 
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+.value-card:hover {
+    transform: translateY(-0.5rem);
+    background: var(--primary);
+    box-shadow: var(--primary-shadow);
+}
+.value-card h3 {
+    color: var(--brand);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: var(--secondary);
+    line-height: 1.7;
+}
+
+.value-card:hover h3,
+.value-card:hover p {
+    color: var(--white);
+}
+
+@media (max-width: 56.25rem) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 37.5rem) {
+    .about-hero {
+        padding: 4rem 5%;
+    }
+    .about-mission {
+        grid-template-columns: 1fr;
+        padding: 3rem 5%;
+    }
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
 }

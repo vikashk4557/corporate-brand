@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "title": "Modern Digital Solutions",
+    "description": "Build scalable web applications with performance and accessibility in mind.",
+    "primaryButton": "Get Started",
+    "secondaryButton": "Learn More"
+  },
+
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "icon": "bi-megaphone",
+        "iconClass": "marketing",
+        "title": "Digital Marketing",
+        "slug": "digital-marketing",
+        "description": "We help businesses build a strong online presence through modern digital marketing strategies.",
+        "details": "Our digital marketing approach focuses on reaching the right audience through effective campaigns, social media, content strategy and online advertising."
+      },
+      {
+        "icon": "bi-bar-chart-line",
+        "iconClass": "chart",
+        "title": "SEO",
+        "slug": "seo",
+        "description": "Boost your search engine rankings with modern SEO techniques.",
+        "details": "Our SEO services focus on improving search visibility, optimizing website content, technical SEO and building a strong organic presence."
+      },
+      {
+        "icon": "bi-camera-reels",
+        "iconClass": "content",
+        "title": "Content Creation",
+        "slug": "content-creation",
+        "description": "Create compelling and engaging content that captures attention, builds trust, and inspires your audience to take action.",
+        "details": "We create engaging blogs, website content, social media content and other digital assets designed to communicate your brand effectively."
+      }
+    ]
+  },
+
+  "features": {
+    "title": "Our Features",
+    "items": [
+      {
+        "icon": "bi-pc-display-horizontal",
+        "iconClass": "responsive",
+        "title": "Responsive",
+        "slug": "Responsive",
+        "description": "Looks perfect on every device.",
+        "details": "Our responsive design ensures that websites work smoothly across desktops, laptops, tablets and mobile phones. Layouts automatically adapt to different screen sizes while maintaining usability, readability and visual consistency.",
+        "highlights": [
+          "Mobile-first responsive layout",
+          "Tablet and desktop optimization",
+          "Flexible images and content",
+          "Touch-friendly interface",
+          "Consistent experience across devices"
+        ]
+      },
+      {
+        "icon": "bi-rocket-takeoff",
+        "iconClass": "rocket",
+        "title": "Fast & Reliable",
+        "slug": "Fast & Reliable",
+        "description": "Optimized for maximum performance.",
+        "details": "We focus on building fast and reliable web applications that load quickly and provide a smooth user experience. Performance optimization helps reduce loading time and ensures that users can interact with the website efficiently.",
+        "highlights": [
+          "Optimized page loading",
+          "Efficient JavaScript execution",
+          "Optimized images and assets",
+          "Reduced unnecessary network requests",
+          "Reliable application performance"
+        ]
+      },
+      {
+        "icon": "bi-shield-check",
+        "iconClass": "secure",
+        "title": "Secure",
+        "slug": "Secure",
+        "description": "Enterprise-grade security standards.",
+        "details": "Security is an important part of our development process. We follow modern security practices to help protect applications, user data and communication from common web security threats.",
+        "highlights": [
+          "Secure data handling",
+          "Input validation",
+          "Protection against common web attacks",
+          "Secure authentication practices",
+          "Privacy-focused development"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "About C Brand",
+    "subtitle": "Building modern digital experiences with purpose.",
+    "description": "C Brand is a digital solutions company focused on creating reliable, accessible and high-performance web experiences.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Our mission is to help businesses solve real-world problems through modern technology, thoughtful design and scalable digital solutions."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "We aim to build digital experiences that are simple, fast, secure and meaningful for businesses and their users."
+    },
+    "values": [
+      {
+        "title": "Innovation",
+        "description": "We continuously explore modern technologies and better ways to solve digital challenges."
+      },
+      {
+        "title": "Performance",
+        "description": "We focus on creating fast, optimized and reliable digital experiences."
+      },
+      {
+        "title": "User Experience",
+        "description": "We design solutions that are simple, accessible and easy for users to interact with."
+      },
+      {
+        "title": "Security",
+        "description": "We follow security-focused development practices to protect applications and user data."
+      }
+    ]
+  }
+}

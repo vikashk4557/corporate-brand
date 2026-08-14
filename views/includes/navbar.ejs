@@ -8,9 +8,12 @@
     background:var(--bg);
     color:var(--text);
     box-shadow:var(--nav-shadow);
-    transition:.3s ease;
+    transition: transform 0.3s ease;
+
   }
-  
+  .navbar.navbar-hidden {
+    transform: translateY(-100%);
+  }
 
   .navbar-brand{
     font-size:2rem;
@@ -239,20 +242,22 @@
         <span class="c-logo">C</span> Brand
       </a>
       <ul class="nav-menu align-items-lg-center" id="navMenu">
-        <li class="nav-item ">
-          <a class="nav-link active fw-semibold" href="#home">Home</a>
+        <li class="nav-item">
+          <a class="nav-link <%= currentPath === '/brands' ? 'active' : '' %> fw-semibold"
+          href="/brands">Home</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link fw-semibold" href="#services">Services</a>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="/brands#services">Services</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link fw-semibold" href="#features">Features</a>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="/brands#features">Features</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link fw-semibold" href="#about">About</a>
+        <li class="nav-item">
+          <a class="nav-link <%= currentPath === '/about' ? 'active' : '' %> fw-semibold"
+          href="/about">About</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link fw-semibold" href="#contact">Contact</a>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="/brands#contact">Contact</a>
         </li>
       </ul>
       <div class="navbar-right">
@@ -274,3 +279,22 @@
     </div>
   </nav>
 </header>
+<script>
+  const navbar = document.querySelector(".navbar");
+  let lastScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY <= 0) {
+      navbar.classList.remove("navbar-hidden");
+      lastScrollY = 0;
+      return;
+    }
+    if (currentScrollY > lastScrollY) {
+      navbar.classList.add("navbar-hidden");
+    }  
+    else if (currentScrollY < lastScrollY) {
+      navbar.classList.remove("navbar-hidden");
+    }
+    lastScrollY = currentScrollY;
+  });
+</script>

@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="feature-page">
+    <section>
+        <div class="feature-container">
+            <aside class="feature-sidebar">
+                <a href="/brands#features" class="go-back">go back</a>
+            </aside>
+
+            <section class="feature-content">
+                <h1 class="feature-title"><i class="bi <%= feature.icon %> icon <%= feature.iconClass %>"></i>
+                    <%= feature.title %></h1>
+                <div class="feature-description">
+                    <p><h6><span class="c-logo">Description</span></h6> :
+                         <%= feature.description %></p>
+                    <p><h6><span class="c-logo">Description</span></h6> :
+                        <%= feature.details %>
+                        <ul>
+                             <% feature.highlights.forEach(item => { %>
+                                <li><%= item %></li>
+                             <% }) %>
+                        </ul>
+                    </p>
+
+                </div>
+            </section>
+        </div>
+    </section>
+
+</main>

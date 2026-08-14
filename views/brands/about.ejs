@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="about-page">
+    <section class="about-hero">
+        <div class="about-content">
+            <span class="about-label">ABOUT C BRAND</span>
+            <h1><%= about.title %></h1>
+            <h2><%= about.subtitle %></h2>
+            <p><%= about.description %></p>
+        </div>
+    </section>
+
+    <section class="about-mission">
+        <div class="mission">
+            <div>
+                <h2><%= about.mission.title %></h2>
+                <p><%= about.mission.description %></p>
+            </div>
+        </div>
+        <div class="vision">
+                <h2><%= about.vision.title %></h2>
+                <p> <%= about.vision.description %></p>
+        </div>
+    </section>
+
+    <section class="values">
+        <h2>
+            Our Core Values
+        </h2>
+        <div class="values-grid">
+            <% about.values.forEach(value => { %>
+                <article class="value-card">
+                    <h3>
+                        <%= value.title %>
+                    </h3>
+                    <p>
+                        <%= value.description %>
+                    </p>
+                </article>
+            <% }) %>
+        </div>
+    </section>
+
+</main>
