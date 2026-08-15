@@ -93,9 +93,9 @@ if (menuBtn) {
 if (themeBtn) {
   themeBtn.addEventListener("click", handleThemeClick);
 }
-const removeThemeListener = eventBus.on("themeChanged",(theme) => {
-  console.log( "Theme changed:", theme );
-});
+// const removeThemeListener = eventBus.on("themeChanged",(theme) => {
+//  console.log( "Theme changed:", theme );
+// });
 
 
 const removeMenuListener =
