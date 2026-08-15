@@ -31,7 +31,7 @@ class EventBus {
 const eventBus = new EventBus();
 
 const themeBtn = document.getElementById("themeToggle");
-const icon = themeBtn.querySelector("i");
+const icon = themeBtn ? themeBtn.querySelector("i") : null;
 
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
@@ -61,15 +61,12 @@ function saveState() {
 }
 
 function applyTheme() {
-  document.body.classList.toggle( "dark", state.theme === "dark");
+  document.body.classList.toggle("dark", state.theme === "dark");
+  if (!icon) return;
   if (state.theme === "dark") {
-    icon.classList.replace(
-     "bi-moon-fill","bi-sun-fill"
-    );
+    icon.classList.replace("bi-moon-fill", "bi-sun-fill");
   } else {
-    icon.classList.replace(
-      "bi-sun-fill", "bi-moon-fill"
-    );
+    icon.classList.replace("bi-sun-fill", "bi-moon-fill");
   }
 }
 
@@ -90,13 +87,14 @@ function handleThemeClick() {
   );
 }
 
-menuBtn.addEventListener("click", handleMenuClick);
-themeBtn.addEventListener("click", handleThemeClick );
-
+if (menuBtn) {
+  menuBtn.addEventListener("click", handleMenuClick);
+}
+if (themeBtn) {
+  themeBtn.addEventListener("click", handleThemeClick);
+}
 const removeThemeListener = eventBus.on("themeChanged",(theme) => {
-
   console.log( "Theme changed:", theme );
-
 });
 
 
@@ -107,11 +105,15 @@ eventBus.on("menuChanged",
 });
 
 function cleanup() {
-  menuBtn.removeEventListener("click",handleMenuClick);
-  themeBtn.removeEventListener("click",handleThemeClick);
+  if (menuBtn) {
+    menuBtn.removeEventListener("click", handleMenuClick);
+  }
+  if (themeBtn) {
+    themeBtn.removeEventListener("click", handleThemeClick);
+  }
   removeThemeListener();
   removeMenuListener();
-  console.log("Cleanup completed");
+  // console.log("Cleanup completed");
 }
 window.addEventListener("pagehide", cleanup);
 loadState();
