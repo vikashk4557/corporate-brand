@@ -93,15 +93,13 @@ if (menuBtn) {
 if (themeBtn) {
   themeBtn.addEventListener("click", handleThemeClick);
 }
-// const removeThemeListener = eventBus.on("themeChanged",(theme) => {
-//  console.log( "Theme changed:", theme );
-// });
+const removeThemeListener = eventBus.on("themeChanged",(theme) => {
+  // cheng theme
+});
 
 
-const removeMenuListener =
-eventBus.on("menuChanged",
-(menuOpen) => {
-  console.log( "Menu state:", menuOpen );
+const removeMenuListener = eventBus.on("menuChanged",(menuOpen) => {
+  // open menu
 });
 
 function cleanup() {
